@@ -28,9 +28,9 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <div id="page-orphanage">
-      <aside class="animate-right">
+  <body id="page-orphanage">
+    <div >
+      <aside class="animate-right sidebar">
 
         <img src="./public/images/map-marker.svg" alt="Happy">
         <footer>
@@ -40,7 +40,7 @@
         </footer>
 
       </aside>
-      <main>
+      <main class="animate-appear with-sidebar">
         <div class="orphanage-details">
           <img src="./public/images/home.jpg" alt="Lar das meninas" />
           <div class="images">
@@ -71,7 +71,7 @@
               situação de risco e/ou vulnerabilidade social.
             </p>
             <div class="map-container">
-              <div class="mapid"></div>
+              <div id="mapid"></div>
               <footer>
                 <a href="">Ver rotas no Google Maps</a>
               </footer>
@@ -86,7 +86,7 @@
             <div class="open-details">
               <div class="hour">
                 <img src="./public/images/clock.svg" alt="horários" />
-                Horário de visitas Das 18h até 8h
+                Horário de visitas das 18h até 8h
               </div>
               <div class="open-on-weekends">
                 <img src="./public/images/info.svg" alt="Informação" />
@@ -106,6 +106,6 @@
       </main>
     </div>
 
-    <script src="./public/scripts/page.orphanage.js"></script>
+    <script src="./public/scripts/page-orphanage.js"></script>
   </body>
 </html>

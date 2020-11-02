@@ -21,8 +21,8 @@ const popup = L.popup({
   className: "map-popup",
   minWidth: 240,
   minHeight: 240,
-}).setContent(
-  'Lar das meninas <a href="./orphanage.hmtl?id=1" class="choose-orphanage" </a>  <img src="./public/images/arrow-white.svg" alt="seta">'
+}).setContent( 
+  'Lar das meninas <a href="./orphanage.html?id=1" class="choose-orphanage" </a>  <img src="./public/images/arrow-white.svg" alt="seta">'
 );
 
 //create and add marker
