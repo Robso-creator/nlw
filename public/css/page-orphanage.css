@@ -39,14 +39,14 @@ aside.sidebar footer button:hover {
 }
 
 main{
-    flex: center;
+  flex: 1;
 }
 
 /* details */
 
 .orphanage-details {
   width: 70rem;
-  margin: 6.4rem;
+  margin: 6.4rem auto;
   background: white;
   border: 0.1rem solid #d3e2e5;
 
