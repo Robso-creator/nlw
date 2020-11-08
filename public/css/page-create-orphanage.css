@@ -3,15 +3,19 @@
   min-height: 100vh;
 }
 
-form {
-  width: 70rem;
-  margin: 6.4rem auto;
-  background: white;
-  border: 0.1rem solid #d3e2e5;
+main {
+  flex: 1;
+}
 
-  border-radius: 2rem;
+.map-container{
+  margin: 0 0 4rem;
+}
+.map-container .leaflet-container {
+  border-radius: 2rem 2rem 0 0;
+}
 
-  overflow: hidden;
+.map-container footer {
+  background:#f5f8fa;
+  border-radius: 0 0 2rem 2rem;
 
-  padding: 8rem;
 }
