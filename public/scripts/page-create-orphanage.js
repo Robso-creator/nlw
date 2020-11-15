@@ -1,0 +1,99 @@
+//create map
+
+const map = L.map("mapid").setView([-23.2161394, -46.8273787], 15);
+
+//create and add tileLayer
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+
+//create icon
+const icon = L.icon({
+  iconUrl: "./public/images/map-marker.svg",
+  iconSize: [58, 68],
+  iconAnchor: [29, 68],
+});
+
+let marker;
+
+//create and add marker
+
+map.on("click", (event) => {
+  const lat = event.latlng.lat;
+  const lng = event.latlng.lng;
+
+  document.querySelector("[name=lat]").value = lat;
+  document.querySelector("[name=lng]").value = lng;
+
+  // remove icon
+  marker && map.removeLayer(marker);
+
+  //add icon tileLayer
+  marker = L.marker([lat, lng], { icon }).addTo(map);
+});
+
+//add photo field
+function addPhotoField() {
+  //take the photo container #images
+
+  const container = document.querySelector("#images");
+
+  //take the duplicate container .new-image
+
+  const fieldsContainer = document.querySelectorAll(".new-upload");
+
+  //realize duplication of the last image added
+
+  const newFieldContainer = fieldsContainer[
+    fieldsContainer.length - 1
+  ].cloneNode(true);
+
+  //verify if the field is empty, if it is, dont add a new fields
+
+  const input = newFieldContainer.children[0];
+
+  if (input.value == "") {
+    return;
+  }
+
+  //clean the field before adding the duplication to the photo container
+
+  input.value = "";
+
+  //add the duplication to the photo container #images
+
+  container.appendChild(newFieldContainer);
+}
+
+function deleteField(event) {
+  const span = event.currentTarget;
+  const fieldsContainer = document.querySelectorAll(".new-upload");
+
+  if (fieldsContainer.length < 2) {
+    span.parentNode.children[0].value = "";
+    return;
+  }
+
+  //delete field
+
+  span.parentNode.remove();
+}
+
+//select yes or no
+
+function toggleSelect(event) {
+  //remove active class
+  document.querySelectorAll(".button-select button").forEach(function (button) {
+    button.classList.remove("active");
+  });
+  // put active class on the clicked button
+  const button = event.currentTarget;
+  button.classList.add("active");
+
+  //att my hidden input with the selectioned values
+
+  const input = document.querySelector("[name='open_on_weekends']");
+
+  input.value = button.dataset.value;
+
+  //verify if it is yes or no
+}
